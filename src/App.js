@@ -2,7 +2,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Titulo from './componentes/Titulo';
 import Navbar from './componentes/Navbar';
-import CartWidget from './componentes/CartWidget';
 
 function App() {
   return (
