@@ -14,3 +14,9 @@
   background-color: rgb(77, 240, 55);
   color: black;
 }
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}

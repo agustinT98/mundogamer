@@ -7,17 +7,17 @@ function navBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container className='contenedorNav'>
-        <Navbar.Brand href="#home">Inicio </Navbar.Brand>
+        <Navbar.Brand href="/">Inicio </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#nosotros">Sobre Nosotros</Nav.Link>
             <NavDropdown title="Productos" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">PC Gamers</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/PCgamers">PC Gamers</NavDropdown.Item>
+              <NavDropdown.Item href="/Consolas">
                 Consolas
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Accesorios</NavDropdown.Item>
+              <NavDropdown.Item href="Accesorios">Accesorios</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Arma tu PC
