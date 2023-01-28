@@ -1,13 +1,12 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PC from './pages/PC/PC';
-import Home from './pages/Home/Home';
-import Consola from './pages/Consolas/Consola';
-import Accesorios from './pages/Accesorios/Accesorios';
-import Titulo from './componentes/Titulo';
-import Navbar from './componentes/Navbar';
+import Home from './pages/Home/Home'; 
+import Titulo from './componentes/Titulo/Titulo';
+import Navbar from './componentes/NavBar/Navbar';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -23,10 +22,11 @@ function App() {
     </div>
       
       <Routes>
+        <Route path='/*' element={<h2>La categoria a la que intenta acceder no existe, intente volviendo al  <a href='/'>inicio </a></h2>} />
         <Route path='/' element={<Home />} />
-        <Route path='Consolas' element={<Consola />} />
-        <Route path='PCgamers' element={<PC />} />
-        <Route path='Accesorios' element={ <Accesorios />} />
+        <Route path='/category/:categoria' element={<ItemListContainer />} />
+        <Route path='item/:id' element= {<ItemDetailContainer />} />
+        <Route path="/category/:categoria/item/:id" element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>    
     

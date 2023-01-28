@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; 
-import ItemCategory from "../ItemCategory/ItemCategory";
-import Item from "../../componentes/Item/Item";
+import ItemDetail from "../ItemDetail/ItemDetail";
+
+ 
+
 class Productos {
-    constructor(id, nombre, descripcion, imagen, categoria, precio, stock) {
+    constructor(id, name, descripcion, imagen, categoria, precio, stock) {
         this.id = id;
-        this.nombre = nombre;
+        this.name = name;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.categoria = categoria;
@@ -21,34 +22,33 @@ const Accesorio1 = new Productos(4, "Lampara led gamer", "Lampara LED impresa en
 const Accesorio2 = new Productos(5, "Portaauriculares gamer", "Portaauriculares Gamer PACMAN impreso en 3D", "https://http2.mlstatic.com/D_Q_NP_657846-MLA48984608929_012022-W.jpg","accesorios", 4000, 10);
 const Consola1 = new Productos (6, "Play Station 5","PlayStation 5 DIGITAL", "https://hiperaudio.com.ar/wp-content/uploads/2022/08/play-5.png", "consolas" , 100000, 5);
 const Consola2 = new Productos (7, "Xbox series X","Consola de Microsoft XBOX series X", "https://assets.xboxservices.com/assets/d2/d4/d2d49e15-65ea-4e87-9d35-66123e183423.jpg?n=Cyberpunk-2077_Feature-0_XSX_767x628.jpg", "consolas" , 100000, 5);
-const ItemList = () => {
+const ItemDetailContainer = () => {
 
-    const [productos, setProducts] = useState([]);
+    const [productos, setProductos] = useState([]);
 
-    const getProducts = new Promise((resolve, reject) => {
+    const getProductos = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve([
                 PC1, PC2, PC3, Accesorio1, Accesorio2, Consola1, Consola2,
             ]);
-        }, [] )
+        }, )
     });
 
     useEffect(() => {
-        getProducts.then((response) => {
-            setProducts(response)
+        getProductos.then((response) => {
+            setProductos(response)
+            console.log(response)
         }).catch(error => console.log(error))
-    },  )
+    }, )
 
-    const { categoria } = useParams();
-    
+    console.log(productos)
+
     return (
-        <>    
-        {categoria ? (<ItemCategory listaProductos={productos} />) : (<Item listaProductos={productos} />)}
-        
-        </>
+        <div className="single-prod">
+            <ItemDetail listaProds={productos} />
+            
+        </div>
     )
-
-   
 }
 
-export default ItemList
+export default ItemDetailContainer
