@@ -30,14 +30,14 @@ const ItemList = () => {
             resolve([
                 PC1, PC2, PC3, Accesorio1, Accesorio2, Consola1, Consola2,
             ]);
-        }, [] )
+        },  )
     });
 
     useEffect(() => {
         getProducts.then((response) => {
             setProducts(response)
         }).catch(error => console.log(error))
-    },  )
+    }, [] )
 
     const { categoria } = useParams();
     

@@ -39,7 +39,7 @@ const ItemDetailContainer = () => {
             setProductos(response)
             console.log(response)
         }).catch(error => console.log(error))
-    }, )
+    }, [])
 
     console.log(productos)
 

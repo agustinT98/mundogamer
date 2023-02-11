@@ -23,13 +23,13 @@ const ItemDetail = ({ listaProds }) => {
                                 </Card.Body>
                                 <ListGroup className="list-group-flush">
                                     <ListGroup.Item>Precio: ${p.precio}</ListGroup.Item>
-                                    <ListGroup.Item>Stock: x{p.stock}</ListGroup.Item>
+                                    <ListGroup.Item>Stock: {p.stock}</ListGroup.Item>
                                     <ItemCount />
                                 </ListGroup>
                     </Card>
                     
                 </div>
-            ))}
+            ), [])}
         </>
     )
 }

@@ -6,7 +6,7 @@ const CartWidget = () => {
       <div className="fa-2x icono">
        <span className='fa-layers fa-fw'>
             <FontAwesomeIcon icon={faCartShopping} /> 
-                <span class="fa-layers-counter">0</span>
+                <span className='fa-layers-counter'>0</span>
         </span>
 
       </div>
