@@ -7,10 +7,14 @@ import Navbar from './componentes/NavBar/Navbar';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import CartProvider from './context/cartProvider';
+import CartDetalle from './componentes/CartDetalle/CartDetalle';
+
 
 function App() {
   return (
     <BrowserRouter> 
+     <CartProvider> 
      <div className="App">
       <header className="App-header">
       <Titulo/>
@@ -27,9 +31,14 @@ function App() {
         <Route path='/category/:categoria' element={<ItemListContainer />} />
         <Route path='item/:id' element= {<ItemDetailContainer />} />
         <Route path="/category/:categoria/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/src/componentes/CartDetalle/CartDetalle.js" element={<CartDetalle />} />
       </Routes>
+      </CartProvider>
     </BrowserRouter>    
     
+
+     
+     
     
     );
 }

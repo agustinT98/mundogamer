@@ -1,10 +1,12 @@
 import ItemCount from "../../componentes/ItemCount/ItemCount";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { useParams } from "react-router-dom";
-
+import { useParams} from "react-router-dom";
+import { useContext } from "react";
+import { Button } from "react-bootstrap";
+import { cartContext } from "../../context/cartContext";
 const ItemDetail = ({ listaProds }) => {
-
+    const {addToCart} = useContext(cartContext);
     const { id } = useParams();
 
     const prod = listaProds.filter((p) => p.id === parseInt(id))
@@ -25,6 +27,8 @@ const ItemDetail = ({ listaProds }) => {
                                     <ListGroup.Item>Precio: ${p.precio}</ListGroup.Item>
                                     <ListGroup.Item>Stock: {p.stock}</ListGroup.Item>
                                     <ItemCount />
+                                   <div> <Button variant="primary" onClick={() => addToCart(p, p.stock)}> Agregar al carrito </Button> </div>
+                                    
                                 </ListGroup>
                     </Card>
                     

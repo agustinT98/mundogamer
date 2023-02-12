@@ -18,7 +18,7 @@ const ItemCount = () => {
         <Button variant="secondary" onClick={() => res()}> - </Button>
         <span> {contador} </span>
         <Button variant="secondary" onClick={() => add()}> + </Button>
-        <Button variant="primary"> Agregar al carrito </Button>
+        
     </div>
     
   )

@@ -14,8 +14,9 @@ function navBar() {
             <Nav.Link><NavLink to="/category/pc">PC GAMERs</NavLink>  </Nav.Link>
             <Nav.Link><NavLink to="/category/consolas">Consolas</NavLink>  </Nav.Link>
             <Nav.Link><NavLink to="/category/accesorios">Accesorios</NavLink>  </Nav.Link>
+            <Nav.Link><NavLink to="/src/componentes/CartDetalle/CartDetalle.js"> <CartWidget /></NavLink></Nav.Link>
           </Nav>
-          <CartWidget />
+          
         </Container>
       </Navbar>
   );
