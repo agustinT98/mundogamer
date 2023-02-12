@@ -9,7 +9,7 @@ function navBar() {
     <Navbar bg="light" variant="light">
         <Container>
           
-          <Nav className="me-auto">
+          <Nav className="navBar">
             <Nav.Link><NavLink to="/"> Inicio </NavLink></Nav.Link>
             <Nav.Link><NavLink to="/category/pc">PC GAMERs</NavLink>  </Nav.Link>
             <Nav.Link><NavLink to="/category/consolas">Consolas</NavLink>  </Nav.Link>
@@ -19,6 +19,7 @@ function navBar() {
           
         </Container>
       </Navbar>
+      
   );
 }
 

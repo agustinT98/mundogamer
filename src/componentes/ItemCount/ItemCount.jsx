@@ -2,7 +2,7 @@ import  Button  from "react-bootstrap/Button";
 import { useState } from "react";
 
 const ItemCount = () => {
-    const [contador, setContador] = useState(0);
+    const [contador, setContador] = useState(1);
     const add = () => {
         setContador(contador + 1);
     };

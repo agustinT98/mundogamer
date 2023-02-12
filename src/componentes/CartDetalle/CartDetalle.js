@@ -5,9 +5,13 @@ import { cartContext } from "../../context/cartContext"
  
 
 const CartDetalle = () => {
-    const {cart, removeCart } = useContext(cartContext);
+    const {cart} = useContext(cartContext);
     const {clearCart} = useContext(cartContext);
-   
+    const {removeCart} = useContext(cartContext);
+    
+    if (cart.length === 0) {
+        return <h1> No hay productos en tu carrito. </h1>
+    }
     
   return (
     <div style={{padding: '30px'}}>
@@ -18,7 +22,7 @@ const CartDetalle = () => {
                 <h4>Nombre del producto: {p.name}</h4>
                 <h4>Categoria: {p.category}</h4>
                 <h4>Precio: {p.price}</h4>
-                <Button variant="dark" onClick={() => removeCart(p.id)} > Eliminar producto</Button>
+                <Button variant="dark" onClick={() => removeCart(p.id)}> Eliminar producto</Button>
             </div>
             
            

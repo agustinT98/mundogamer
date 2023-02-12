@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
  
-
 class Productos {
     constructor(id, name, descripcion, imagen, categoria, precio, stock) {
         this.id = id;

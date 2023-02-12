@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
+ 
 
 const ItemCategory = ({ listaProductos }) => {
 
@@ -24,7 +24,7 @@ const ItemCategory = ({ listaProductos }) => {
                             <Card.Title>{p.name}</Card.Title>
                             <Link to={`/category/${p.categoria}/item/${p.id}`}><button className="details-button">Ver detalles</button></Link>
                         </Card.Body>
-                        <ItemCount />
+                        
                     </Card>
                 </Col>
             ))}
