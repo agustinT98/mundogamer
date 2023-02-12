@@ -1,25 +1,37 @@
-
-//IMPORTACIONES DE USESTATE Y CARTCONTEXT 
-
 import { useState } from "react";
 import { cartContext } from "./cartContext";
 
-// CREAMOS UNA VARIABLE QUE CONTIENE AL APP.JS COMO CHILDREN PARA PODER ENCAPSULAR LA APP ENTERA.
+
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState ([]);
 
     const addToCart = (item, quantity) => {
-        const newProduct = {
-            id: item.id, 
-            imagen: item.imagen,
-            name: item.name,
-            price: item.precio,
-            quantity: quantity,
-            category: item.categoria,
-            
-        };
-        setCart([...cart, newProduct]);
-        console.log(cart);
+        
+        let newCart;
+        let p = cart.find(p => p.id === item.id);
+        if (p){
+            p.quantity += quantity;
+            if (p.quantity > p.stock) {
+                alert("No hay stock disponible");
+                return;
+            }
+            newCart = [...cart]; 
+        }
+        else {
+            const newProduct = {
+                id: item.id, 
+                imagen: item.imagen,
+                descripcion: item.descripcion,
+                name: item.name,
+                price: item.precio,
+                quantity: quantity,
+                category: item.categoria,
+                stock: item.stock
+                
+            };
+            newCart = [...cart, newProduct];
+        }
+        setCart(newCart);
     }
     const removeCart = (pId) => {
             setCart(cart.filter((p) => p.id !== pId));

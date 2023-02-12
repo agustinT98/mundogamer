@@ -26,7 +26,8 @@ const ItemDetail = ({ listaProds }) => {
                                 <ListGroup className="list-group-flush">
                                     <ListGroup.Item>Precio: ${p.precio}</ListGroup.Item>
                                     <ListGroup.Item>Stock: {p.stock}</ListGroup.Item>
-                                    <ItemCount />
+                                    <ItemCount
+                                    stock ={p.stock} />
                                    <div> <Button variant="primary" onClick={() => addToCart(p, p.stock)}> Agregar al carrito </Button> </div>
                                     
                                 </ListGroup>
