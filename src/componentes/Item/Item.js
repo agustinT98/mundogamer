@@ -12,7 +12,7 @@ const Item = ({ listaProductos }) => {
                     <Card className="cards">
                         <Card.Img
                             variant="top"
-                            src={`images/${p.imagen}`}
+                            src={`${p.imagen}`}
                             alt={p.name}
                         />
                         <Card.Body>

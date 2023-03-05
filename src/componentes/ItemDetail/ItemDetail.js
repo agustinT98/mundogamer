@@ -16,7 +16,7 @@ const ItemDetail = ({ listaProds }) => {
             {prod.map((p) => (
                 <div key={p.id}>
                     <Card className="cards">
-                                <Card.Img variant="top" src={`/public/images/${p.imagen}`} />
+                                <Card.Img variant="top" src={`../../../public/images/${p.imagen}`} />
                                 <Card.Body>
                                     <Card.Title>{p.name}</Card.Title>
                                     <Card.Text>

@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
         const db = getFirestore();
         const querySnapshot = collection(db, 'productos');
 
-        setTimeout(() => {
+        
             getDocs(querySnapshot).then((response) => {
                 const data = response.docs.map((documento) => {
                      
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
                 console.log(data);
                 setProductos(data);
             }).catch(error => console.log(error))
-        }, 2000)
+        
        
     };
     useEffect(() => {
