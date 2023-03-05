@@ -30,6 +30,7 @@ const CartDetalle = () => {
                                 <ListGroup className="list-group-flush">
                                     <ListGroup.Item>Precio: ${p.price}</ListGroup.Item>
                                     <ListGroup.Item>Stock: {p.stock}</ListGroup.Item>
+                                    <ListGroup.Item>Cantidad: {p.quantity}</ListGroup.Item>
                                      
                                      
                                    <div className="botonCard">
@@ -48,4 +49,4 @@ const CartDetalle = () => {
   )
 }
 
-export default CartDetalle
+export default CartDetalle;
