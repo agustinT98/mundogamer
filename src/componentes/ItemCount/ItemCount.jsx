@@ -1,16 +1,22 @@
 import  Button  from "react-bootstrap/Button";
 import { useState } from "react";
+ 
 
-const ItemCount = () => {
+ 
+const ItemCount = ({stockP}) => {
+    const stock = stockP
     const [contador, setContador] = useState(1);
     const add = () => {
-        setContador(contador + 1);
+        if (stock > contador){
+            setContador(contador + 1);
+        }
+        
     };
     const res = () => {
-        if (contador === 0){
-            return;
+        if (contador > 1){
+            setContador(contador - 1);
         }
-        setContador(contador - 1);
+        
     };
 
   return (

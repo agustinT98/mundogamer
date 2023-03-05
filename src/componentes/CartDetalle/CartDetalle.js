@@ -31,6 +31,7 @@ const CartDetalle = () => {
                                     <ListGroup.Item>Precio: ${p.price}</ListGroup.Item>
                                     <ListGroup.Item>Stock: {p.stock}</ListGroup.Item>
                                      
+                                     
                                    <div className="botonCard">
                                    
                                    <Button variant="primary" onClick={() => removeCart(p.id)}> Eliminar producto</Button>

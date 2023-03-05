@@ -8,13 +8,9 @@ const CartProvider = ({children}) => {
     const addToCart = (item, quantity) => {
         
         let newCart;
-        let p = cart.find(p => p.id === item.id);
+        let p = cart.find((p) => p.id === item.id);
         if (p){
             p.quantity += quantity;
-            if (p.quantity > p.stock) {
-                alert("No hay stock disponible");
-                return;
-            }
             newCart = [...cart]; 
         }
         else {
@@ -36,6 +32,7 @@ const CartProvider = ({children}) => {
     const removeCart = (pId) => {
             setCart(cart.filter((p) => p.id !== pId));
     };
+    
     const clearCart = () => {
         setCart([]);
     };  
