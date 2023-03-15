@@ -31,7 +31,7 @@ const CartDetalle = () => {
         });
         addDoc(querySnapshot, order).then((response) => {
             console.log(response);
-            alert("Orden creada con exito");
+            alert("Compra finalizada con éxito");
         })
         .catch(error => console.log(error))
     }
