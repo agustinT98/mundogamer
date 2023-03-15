@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { cartContext } from "./cartContext";
-
+import { useEffect } from "react";
 
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState ([]);
@@ -36,8 +36,28 @@ const CartProvider = ({children}) => {
     const clearCart = () => {
         setCart([]);
     };  
+
+    const [total, setTotal] = useState(0)
+
+    const precioTotal = () => {
+        setTotal(cart.reduce((price, p) => price + p.price * p.quantity, 0))
+    }
+
+    useEffect(() => {
+        precioTotal()
+    }, [cart])
+
+    const [counter, setCounter] = useState(0)
+
+    const contadorCart = () => {
+        setCounter(cart.reduce((quant, p) => quant + p.quantity, 0))
+    }
+
+    useEffect(() => {
+        contadorCart()
+    }, [cart])
   return (
-    <cartContext.Provider value={{cart, addToCart, clearCart,removeCart}}> 
+    <cartContext.Provider value={{cart, addToCart, clearCart,removeCart, counter, total}}> 
         {children}
         </cartContext.Provider>
   )
